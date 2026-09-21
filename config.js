@@ -39,12 +39,12 @@ const HOME_SECTIONS = [
         url: "https://www.commbank.com.au/retail/netbank/accounts/",
       },
       {
-        name: "ANZ",
-        url: "https://secure.anz.co.nz/IBCS/service/home?referrer=https%253A%252F%252Fwww.anz.co.nz%252F",
-      },
-      {
         name: "Sharesies",
         url: "https://app.sharesies.com/profile/personal",
+      },
+      {
+        name: "ANZ",
+        url: "https://secure.anz.co.nz/IBCS/service/home?referrer=https%253A%252F%252Fwww.anz.co.nz%252F",
       },
       {
         name: "Colonial First State",
