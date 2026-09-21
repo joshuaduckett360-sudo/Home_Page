@@ -1,7 +1,6 @@
 (() => {
   const sectionsRoot = document.getElementById("sections");
-  const quickSection = document.getElementById("quickSection");
-  const quickGrid = document.getElementById("quickGrid");
+  const topGrid = document.getElementById("topGrid");
   const searchInput = document.getElementById("searchInput");
   const searchForm = document.getElementById("searchForm");
   const noResults = document.getElementById("noResults");
@@ -34,44 +33,39 @@
     }).format(new Date());
   }
 
-  function linkCard(link) {
+  function faviconUrl(url) {
+    return "https://www.google.com/s2/favicons?sz=64&domain_url=" +
+      encodeURIComponent(url);
+  }
+
+  function linkCard(link, compact = false) {
     const a = document.createElement("a");
-    a.className = "link-card";
+    a.className = compact ? "link-card top-card" : "link-card";
     a.href = link.url;
-    a.dataset.search = [link.name, link.note, link.url]
+    a.dataset.search = [link.name, link.url]
       .filter(Boolean)
       .join(" ")
       .toLowerCase();
 
-    const icon = document.createElement("span");
-    icon.className = "icon";
-    icon.textContent = link.icon || link.name.slice(0, 2).toUpperCase();
-
-    const copy = document.createElement("span");
-    copy.className = "link-copy";
+    const icon = document.createElement("img");
+    icon.className = "favicon";
+    icon.src = faviconUrl(link.url);
+    icon.alt = "";
+    icon.loading = "lazy";
 
     const name = document.createElement("span");
     name.className = "link-name";
     name.textContent = link.name;
 
-    const note = document.createElement("span");
-    note.className = "link-note";
-    note.textContent = link.note || new URL(link.url).hostname;
-
-    copy.append(name, note);
-    a.append(icon, copy);
+    a.append(icon, name);
     return a;
   }
 
   function render() {
     sectionsRoot.replaceChildren();
-    quickGrid.replaceChildren();
+    topGrid.replaceChildren();
 
-    const favourites = HOME_SECTIONS.flatMap(section =>
-      section.links.filter(link => link.favourite)
-    );
-    favourites.forEach(link => quickGrid.append(linkCard(link)));
-    quickSection.hidden = favourites.length === 0;
+    (HOME_TOP_LINKS || []).forEach(link => topGrid.append(linkCard(link, true)));
 
     HOME_SECTIONS.forEach(section => {
       const wrapper = document.createElement("section");
@@ -108,15 +102,14 @@
       visibleCount += sectionVisible;
     });
 
-    let quickVisible = 0;
-    quickGrid.querySelectorAll(".link-card").forEach(card => {
+    let topVisible = 0;
+    topGrid.querySelectorAll(".link-card").forEach(card => {
       const show = !q || card.dataset.search.includes(q);
       card.hidden = !show;
-      if (show) quickVisible += 1;
+      if (show) topVisible += 1;
     });
-    quickSection.hidden = quickVisible === 0;
 
-    noResults.hidden = !q || visibleCount > 0;
+    noResults.hidden = !q || (visibleCount + topVisible) > 0;
   }
 
   searchInput.addEventListener("input", () => filterLinks(searchInput.value));
