@@ -22,7 +22,7 @@ const HOME_TOP_LINKS = [
   },
   {
     name: "OneDrive",
-    url: "https://onedrive.live.com/",
+    url: "https://onedrive.live.com/?id=root",
   },
 ];
 
@@ -36,19 +36,19 @@ const HOME_SECTIONS = [
       },
       {
         name: "CommBank",
-        url: "https://www.commbank.com.au/netbank.html",
+        url: "https://www.commbank.com.au/retail/netbank/accounts/",
       },
       {
         name: "ANZ",
-        url: "https://www.anz.com.au/",
+        url: "https://secure.anz.co.nz/IBCS/service/home?referrer=https%253A%252F%252Fwww.anz.co.nz%252F",
       },
       {
         name: "Sharesies",
-        url: "https://app.sharesies.com.au/",
+        url: "https://app.sharesies.com/profile/personal",
       },
       {
         name: "Colonial First State",
-        url: "https://www.cfs.com.au/",
+        url: "https://secure.colonialfirststate.com.au/",
       },
     ],
   },
@@ -57,15 +57,15 @@ const HOME_SECTIONS = [
     links: [
       {
         name: "NBA",
-        url: "https://www.nba.com/watch/league-pass-stream",
+        url: "https://www.nba.com/games",
       },
       {
         name: "Kayo",
-        url: "https://kayosports.com.au/",
+        url: "https://kayosports.com.au/en-AU/home",
       },
       {
         name: "Stan",
-        url: "https://www.stan.com.au/",
+        url: "https://app.stan.com.au/",
       },
       {
         name: "9Sport",
@@ -78,11 +78,11 @@ const HOME_SECTIONS = [
     links: [
       {
         name: "Plex",
-        url: "https://app.plex.tv/desktop/",
+        url: "https://app.plex.tv/desktop#",
       },
       {
         name: "Netflix",
-        url: "https://www.netflix.com/",
+        url: "https://www.netflix.com/browse",
       },
       {
         name: "YouTube",
@@ -95,19 +95,19 @@ const HOME_SECTIONS = [
     links: [
       {
         name: "ChatGPT",
-        url: "https://chatgpt.com/",
+        url: "https://chat.openai.com/chat",
       },
       {
         name: "GitHub",
-        url: "https://github.com/",
+        url: "https://github.com/joshuaduckett360-sudo?tab=repositories",
       },
       {
         name: "SerpAPI",
-        url: "https://serpapi.com/",
+        url: "https://serpapi.com/dashboard",
       },
       {
         name: "Tailscale",
-        url: "https://login.tailscale.com/admin/machines",
+        url: "https://console.tailscale.com/admin/machines",
       },
     ],
   },
