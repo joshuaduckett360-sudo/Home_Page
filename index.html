@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#17324d">
+  <meta name="description" content="Josh's personal start page">
+  <title>Josh's Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div>
+        <p class="eyebrow" id="dateLabel"></p>
+        <h1 id="greeting">Josh's Home</h1>
+        <p class="subtitle" id="subtitle">Everything in one place.</p>
+      </div>
+      <button class="theme-button" id="themeButton" type="button" aria-label="Toggle dark mode">◐</button>
+    </header>
+
+    <form class="search" id="searchForm">
+      <span class="search-icon">⌕</span>
+      <input
+        id="searchInput"
+        type="search"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="Search Google or filter links…"
+        aria-label="Search"
+      >
+      <span class="search-hint">Enter</span>
+    </form>
+
+    <section class="quick" id="quickSection">
+      <div class="section-heading">
+        <h2>Quick Access</h2>
+        <span>Favourites</span>
+      </div>
+      <div class="quick-grid" id="quickGrid"></div>
+    </section>
+
+    <div id="sections"></div>
+
+    <div class="no-results" id="noResults" hidden>
+      <strong>No matching links</strong>
+      <span>Press Enter to search Google instead.</span>
+    </div>
+
+    <footer>
+      <span>Tip: type to filter links, or press Enter for Google.</span>
+      <button id="editHelp" type="button">How to edit</button>
+    </footer>
+  </main>
+
+  <dialog id="helpDialog">
+    <div class="dialog-head">
+      <strong>Editing this page</strong>
+      <button id="closeHelp" type="button" aria-label="Close">×</button>
+    </div>
+    <p>Almost everything is controlled from <code>config.js</code>.</p>
+    <p>Add, remove or reorder link blocks there, commit the change, and this page will update automatically.</p>
+    <pre>{
+  name: "Example",
+  url: "https://example.com/",
+  note: "Optional description",
+  icon: "EX",
+  favourite: true
+}</pre>
+  </dialog>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
