@@ -24,10 +24,6 @@ const HOME_TOP_LINKS = [
     name: "OneDrive",
     url: "https://onedrive.live.com/",
   },
-  {
-    name: "GitHub",
-    url: "https://github.com/",
-  },
 ];
 
 const HOME_SECTIONS = [
@@ -100,6 +96,10 @@ const HOME_SECTIONS = [
       {
         name: "ChatGPT",
         url: "https://chatgpt.com/",
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com/",
       },
       {
         name: "SerpAPI",
