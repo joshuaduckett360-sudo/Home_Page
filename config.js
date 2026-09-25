@@ -32,7 +32,7 @@ const HOME_SECTIONS = [
     links: [
       {
         name: "Admin Sync",
-        url: "https://joshuas-macbook-air.tailda8b88.ts.net/",
+        url: "https://app.adminsync.app/",
       },
       {
         name: "CommBank",
@@ -108,6 +108,14 @@ const HOME_SECTIONS = [
       {
         name: "Tailscale",
         url: "https://console.tailscale.com/admin/machines",
+      },
+      {
+        name: "Cloudflare",
+        url: "https://dash.cloudflare.com/",
+      },
+      {
+        name: "Railway",
+        url: "https://railway.com/project/b674fb70-9112-47f0-aa71-b06f98d166d6",
       },
     ],
   },
